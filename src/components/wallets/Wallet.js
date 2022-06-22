@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function Wallet(props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { imagesrc, title, identity } = props;
+  const { imagesrc, title } = props;
 
   const togglePopUp = () => {
     setIsOpen(!isOpen);

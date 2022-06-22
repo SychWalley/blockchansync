@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import WalletPage from "./components/wallets/WalletPage";
 // import { WalletsData } from "./components/wallets/WalletsData";
 
-import Submitted from "./components/Submitted";
+// import Submitted from "./components/Submitted";
 import Footer from "./components/Footer";
 import Heading from "./components/Heading";
 import Home from "./components/home/HomePage";
