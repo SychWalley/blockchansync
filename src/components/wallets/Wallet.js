@@ -20,7 +20,7 @@ function Wallet(props) {
   return (
     <div className="">
       <div className="logos ">
-        <img className="col-7 m-2" src={imagesrc} alt="logo" />
+        <img className=" m-2" src={imagesrc} alt="logo" />
         <h3 className="titles text-center mt-3"> {title} </h3>
         <button className="Btns" onClick={togglePopUp}>
           <Link to="#">Synchronize</Link>
