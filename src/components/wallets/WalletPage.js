@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Wallet from "./Wallet";
 import { WalletsData } from "./WalletsData";
 
 import "./Wallet.css";
+import ConnectWallet from "../pop-pages/ConnectWallet";
 
-function WalletPage() {
+function WalletPage({ title, imagesrc }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopUp = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <main>
       <header className="container">
@@ -18,16 +25,24 @@ function WalletPage() {
         <p>Your data stays on your device and its never stored.</p>
       </header>
       <section className="container wrapper">
-        {WalletsData.map((wallets, index) => (
+        {WalletsData.map((wallets) => (
           <section className="">
             <Wallet
-              identity={index}
+              key={wallets.id}
               title={wallets.title}
               imagesrc={wallets.image}
             />
           </section>
         ))}
       </section>
+
+      {isOpen && (
+        <ConnectWallet
+          title={title}
+          imagesrc={imagesrc}
+          handleClose={togglePopUp}
+        />
+      )}
     </main>
   );
 }

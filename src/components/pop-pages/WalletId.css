@@ -1,4 +1,4 @@
-.box-wrapper {
+/* .box-wrapper {
   position: fixed;
   background: #00000050;
   width: 100%;
@@ -27,17 +27,17 @@
   -webkit-box-pack: center;
   justify-content: center;
   padding: 1em;
-}
+} */
 
 .header img {
-  width: 45px;
-  height: 60px;
-  max-height: 100px;
+  width: 20%;
+  height: auto;
+ 
   border-radius: 50%;
 }
 
-@media screen and (min-width: 500px) {
+/* @media screen and (min-width: 500px) {
   .main-box {
     width: 50%;
   }
-}
+} */

@@ -8,10 +8,8 @@ import { Link } from "react-router-dom";
 
 // import WalletConnect from "../assets/logo (49).JPG";
 
-function Wallet(props) {
+function Wallet({ imagesrc, title }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  const { imagesrc, title } = props;
 
   const togglePopUp = () => {
     setIsOpen(!isOpen);
@@ -27,7 +25,13 @@ function Wallet(props) {
         </button>
       </div>
 
-      {isOpen && <ConnectWallet handleClose={togglePopUp} />}
+      {isOpen && (
+        <ConnectWallet
+          title={title}
+          imagesrc={imagesrc}
+          handleClose={togglePopUp}
+        />
+      )}
     </div>
   );
 }
