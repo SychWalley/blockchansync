@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "./home.css";
 import Issues from "./Issues";
 import { IssuesData } from "./IssuesData";
-console.log(IssuesData);
+
+import Faq from "../faq/Faq";
 
 function HomePage() {
   return (
@@ -29,6 +30,7 @@ function HomePage() {
           />
         ))}
       </section>
+      <Faq />
     </div>
   );
 }

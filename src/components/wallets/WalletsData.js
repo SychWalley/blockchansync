@@ -73,6 +73,8 @@ import Logo72 from "../../assets/logo(72).JPG";
 import Logo73 from "../../assets/logo(73).JPG";
 import Logo74 from "../../assets/logo(74).JPG";
 import Logo75 from "../../assets/logo(75).JPG";
+import Logo76 from "../../assets/logo76.jpg";
+import Logo77 from "../../assets/logo77.jpg";
 export const WalletsData = [
   { id: 17, image: Logo18, title: "Trust Wallet" },
   { id: 71, image: Logo72, title: "Meta Mask" },
@@ -147,6 +149,8 @@ export const WalletsData = [
   { id: 69, image: Logo70, title: "CYBAVO Wallet" },
   { id: 70, image: Logo71, title: "EasyPocket" },
   { id: 71, image: Logo73, title: "Looping Wallets" },
-  { id: 71, image: Logo74, title: "PEAKDEFI Wallet" },
-  { id: 71, image: Logo75, title: "Bridge Wallet" },
+  { id: 72, image: Logo74, title: "PEAKDEFI Wallet" },
+  { id: 73, image: Logo75, title: "Bridge Wallet" },
+  { id: 74, image: Logo76, title: "Solodex Wallet" },
+  { id: 75, image: Logo77, title: "SaitaMask Wallet" },
 ];

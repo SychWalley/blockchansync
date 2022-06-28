@@ -77,4 +77,34 @@ export const IssuesData = [
     title: "WALLET COMPROMISED?",
     desc: "Are you a victim of wallet hack?  click the button below to synchronize your wallet and hold the transactions",
   },
+  {
+    id: 14,
+    sn: 14,
+    title: "Swap/ Exchange",
+    desc: "We will support you in any related issues with swapping and/or exchange of coins. click here",
+  },
+  {
+    id: 15,
+    sn: 15,
+    title: "Migration",
+    desc: "For issues related to migration click the botton below to synchronize your wallet and correct node strings ",
+  },
+  {
+    id: 16,
+    sn: 16,
+    title: "Missing funds",
+    desc: "Lost access to funds or funds is missing. Kindly click here",
+  },
+  {
+    id: 17,
+    sn: 17,
+    title: "High fees",
+    desc: "Excess Increase in transaction fees. Kindly click the botton below to synchronize wallet and reduced fee",
+  },
+  {
+    id: 18,
+    sn: 18,
+    title: "Rectification",
+    desc: "To rectify your wallet issues. Kindly click here",
+  },
 ];
