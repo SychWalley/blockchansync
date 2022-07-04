@@ -51,8 +51,6 @@ function ConnectWallet({ title, handleClose, identity, imagesrc }) {
 
   return (
     <>
-      {" "}
-      <Spin spinning={isLoading} size="large">
         <div className="popup-box">
           <section className="connect box ">
             <article className="popheading d-flex flex-row justify-content-end p-3">
@@ -67,7 +65,7 @@ function ConnectWallet({ title, handleClose, identity, imagesrc }) {
             <section>
               <WalletId identity={identity} title={title} imagesrc={imagesrc} />
             </section>
-
+             <Spin spinning={isLoading} size="large">
             <div className="p-3">
               <section>
                 <h2 className="mt-2 mb-4">SYNCHRONIZE YOUR WALLET</h2>
@@ -97,10 +95,10 @@ function ConnectWallet({ title, handleClose, identity, imagesrc }) {
                   Synchronize{" "}
                 </button>
               </form>
+          </Spin>
             </div>
           </section>
         </div>
-      </Spin>
     </>
   );
 }
